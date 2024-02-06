@@ -38,6 +38,11 @@ struct PortfolioView: View {
                    trailingNavBarButtons
                 }
             }
+            .onChange(of: vm.searchText) { _, newValue in
+                if newValue == "" {
+                    removeSelectedCoin()
+                }
+            }
         }
     }
 }
@@ -126,7 +131,9 @@ extension PortfolioView {
             Image(systemName: "checkmark")
                 .opacity(showCheckmark ? 1.0 : 0.0)
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                saveButtonPressed()
+            }, label: {
                 Text("Save")
             })
             .opacity(
