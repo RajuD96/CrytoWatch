@@ -107,7 +107,18 @@ extension HomeView {
     
     private var columnTitles: some View {
         HStack {
-            Text("Coin")
+            HStack {
+                Text("Coin")
+                Image(systemName: "chevron.down")
+                    .opacity((homeVM.sortOption == .holding || homeVM.sortOption == .holdingReserved) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: homeVM.sortOption == .holding ? 0 : 180))
+                   
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    homeVM.sortOption = homeVM.sortOption == .holding ? .holdingReserved : .holding
+                }
+            }
             Spacer()
             if showPortfolio {
                 Text("Holdings")
