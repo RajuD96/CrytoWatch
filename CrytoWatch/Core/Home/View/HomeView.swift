@@ -107,24 +107,44 @@ extension HomeView {
     
     private var columnTitles: some View {
         HStack {
-            HStack {
+            HStack(spacing: 4) {
                 Text("Coin")
                 Image(systemName: "chevron.down")
-                    .opacity((homeVM.sortOption == .holding || homeVM.sortOption == .holdingReserved) ? 1.0 : 0.0)
-                    .rotationEffect(Angle(degrees: homeVM.sortOption == .holding ? 0 : 180))
+                    .opacity((homeVM.sortOption == .rank || homeVM.sortOption == .rankReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: homeVM.sortOption == .rank ? 0 : 180))
                    
             }
             .onTapGesture {
                 withAnimation(.default) {
-                    homeVM.sortOption = homeVM.sortOption == .holding ? .holdingReserved : .holding
+                    homeVM.sortOption = homeVM.sortOption == .rank ? .rankReversed : .rank
                 }
             }
             Spacer()
             if showPortfolio {
-                Text("Holdings")
+                HStack(spacing: 4) {
+                    Text("Holdings")
+                    Image(systemName: "chevron.down")
+                        .opacity((homeVM.sortOption == .holding || homeVM.sortOption == .holdingReserved) ? 1.0 : 0.0)
+                        .rotationEffect(Angle(degrees: homeVM.sortOption == .holding ? 0 : 180))
+                }
+                .onTapGesture {
+                    withAnimation(.default) {
+                        homeVM.sortOption = homeVM.sortOption == .holding ? .holdingReserved : .holding
+                    }
+                }
             }
-            Text("Price")
-                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            HStack {
+                Text("Price")
+                Image(systemName: "chevron.down")
+                    .opacity((homeVM.sortOption == .price || homeVM.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: homeVM.sortOption == .price ? 0 : 180))
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    homeVM.sortOption = homeVM.sortOption == .price ? .priceReversed : .price
+                }
+            }
             
             Button(action: {
                 withAnimation(.linear(duration: 2.0)){
