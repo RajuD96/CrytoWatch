@@ -13,6 +13,7 @@
 		7C004E692B6EB62F006D3281 /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C004E682B6EB62F006D3281 /* MarketDataModel.swift */; };
 		7C004E6B2B6EB78B006D3281 /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C004E6A2B6EB78B006D3281 /* MarketDataService.swift */; };
 		7C004E6D2B6FA904006D3281 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C004E6C2B6FA904006D3281 /* PortfolioView.swift */; };
+		7C1E691E2B77F9020027E6F7 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E691D2B77F9020027E6F7 /* DetailsView.swift */; };
 		7C3F7DA62B769C8300AB7350 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F7DA52B769C8300AB7350 /* HapticManager.swift */; };
 		7C58478B2B696FF7003A0A4A /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C58478A2B696FF7003A0A4A /* NetworkingManager.swift */; };
 		7C93DD0F2B6FB20C0056B790 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93DD0E2B6FB20C0056B790 /* XMarkButton.swift */; };
@@ -50,6 +51,7 @@
 		7C004E682B6EB62F006D3281 /* MarketDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
 		7C004E6A2B6EB78B006D3281 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		7C004E6C2B6FA904006D3281 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		7C1E691D2B77F9020027E6F7 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		7C3F7DA52B769C8300AB7350 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		7C58478A2B696FF7003A0A4A /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		7C93DD0E2B6FB20C0056B790 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
@@ -92,6 +94,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C1E691A2B77F4C40027E6F7 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				7C1E691C2B77F8F60027E6F7 /* View */,
+				7C1E691B2B77F8EC0027E6F7 /* ViewModels */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		7C1E691B2B77F8EC0027E6F7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7C1E691C2B77F8F60027E6F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C1E691D2B77F9020027E6F7 /* DetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7C5847892B696FDC003A0A4A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +194,7 @@
 		7CC6EA8E2B650ECC0015A56B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7C1E691A2B77F4C40027E6F7 /* DetailView */,
 				7CC6EA922B6510490015A56B /* Components */,
 				7CC6EA8F2B650ED10015A56B /* Home */,
 			);
@@ -332,6 +359,7 @@
 				7CC6EA7A2B6475960015A56B /* CrytoWatchApp.swift in Sources */,
 				7CBB7E012B6E0F470060B361 /* SearchBarView.swift in Sources */,
 				7CB0359E2B6C1EF800B347E4 /* CoinImageViewModel.swift in Sources */,
+				7C1E691E2B77F9020027E6F7 /* DetailsView.swift in Sources */,
 				7C004E632B6EADCA006D3281 /* StatisticModel.swift in Sources */,
 				7C004E6B2B6EB78B006D3281 /* MarketDataService.swift in Sources */,
 				7C004E672B6EB1DF006D3281 /* HomeStatView.swift in Sources */,
