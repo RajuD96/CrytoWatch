@@ -7,20 +7,37 @@
 
 import SwiftUI
 
-struct DetailsView: View {
-    
+struct DetailsLoadingView: View {
     
     @Binding var coin: CoinModel?
     
-    init(coin: Binding<CoinModel?>) {
-        self._coin = coin
+    var body: some View {
+        ZStack {
+            if let coin = coin {
+                DetailsView(coin: coin)
+            }
+        }
+    }
+}
+
+
+struct DetailsView: View {
+    
+    @StateObject private var vm: DetailViewModel
+    
+    let coin: CoinModel
+    
+    init(coin: CoinModel) {
+        
+        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
+        self.coin = coin
     }
     
     var body: some View {
-        Text(coin?.name ?? "")
+        Text(coin.name)
     }
 }
 
 #Preview {
-    DetailsView(coin: .constant(DeveloperPreview.instance.coin))
+    DetailsView(coin: DeveloperPreview.instance.coin)
 }
