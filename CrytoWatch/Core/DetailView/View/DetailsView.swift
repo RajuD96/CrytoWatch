@@ -27,6 +27,13 @@ struct DetailsView: View {
     
     let coin: CoinModel
     
+    private var colums: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
+    private let spacing: CGFloat = 30
+    
     init(coin: CoinModel) {
         
         _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
@@ -34,10 +41,52 @@ struct DetailsView: View {
     }
     
     var body: some View {
-        Text(coin.name)
+        ScrollView {
+            VStack {
+                Text("")
+                    .frame(height: 150)
+                
+                Text("Overview")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(Color.theme.accent)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    
+                
+                Divider()
+                
+                LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
+                    
+                    ForEach(0..<6) { _ in
+                        StatisticView(stat: StatisticModel(title: "Title", value: "Value"))
+                    }
+                })
+                
+                Text("Additional Details")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(Color.theme.accent)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                
+                Divider()
+                
+                LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
+                    
+                    ForEach(0..<6) { _ in
+                        StatisticView(stat: StatisticModel(title: "Title", value: "Value"))
+                    }
+                })
+                
+            }
+            .padding()
+            
+        }
+        .navigationTitle(vm.coin.name)
     }
 }
 
 #Preview {
-    DetailsView(coin: DeveloperPreview.instance.coin)
+    NavigationStack {
+        DetailsView(coin: DeveloperPreview.instance.coin)
+    }
 }
