@@ -45,38 +45,12 @@ struct DetailsView: View {
             VStack {
                 Text("")
                     .frame(height: 150)
-                
-                Text("Overview")
-                    .font(.title)
-                    .bold()
-                    .foregroundStyle(Color.theme.accent)
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                    
-                
+                overviewTitle
                 Divider()
-                
-                LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
-                    
-                    ForEach(0..<6) { _ in
-                        StatisticView(stat: StatisticModel(title: "Title", value: "Value"))
-                    }
-                })
-                
-                Text("Additional Details")
-                    .font(.title)
-                    .bold()
-                    .foregroundStyle(Color.theme.accent)
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                
+                overviewGrid
+                additionalTitle
                 Divider()
-                
-                LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
-                    
-                    ForEach(vm.overviewStatistics) { stat in
-                        StatisticView(stat: stat)
-                    }
-                })
-                
+                additionalGrid
             }
             .padding()
             
@@ -88,5 +62,43 @@ struct DetailsView: View {
 #Preview {
     NavigationStack {
         DetailsView(coin: DeveloperPreview.instance.coin)
+    }
+}
+
+
+extension DetailsView {
+    private var overviewTitle: some View {
+        Text("Overview")
+            .font(.title)
+            .bold()
+            .foregroundStyle(Color.theme.accent)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+    }
+    
+    private var additionalTitle: some View {
+        
+        Text("Additional Details")
+            .font(.title)
+            .bold()
+            .foregroundStyle(Color.theme.accent)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+    }
+    
+    private var overviewGrid: some View {
+        LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
+            
+            ForEach(vm.overviewStatistics) { stat in
+                StatisticView(stat: stat)
+            }
+        })
+    }
+    
+    private var additionalGrid: some View {
+        LazyVGrid(columns: colums, alignment: .leading, spacing: spacing, content: {
+            
+            ForEach(vm.additionalStatistics) { stat in
+                StatisticView(stat: stat)
+            }
+        })
     }
 }
