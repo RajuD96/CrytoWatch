@@ -27,6 +27,7 @@
 		7CB0359E2B6C1EF800B347E4 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB0359D2B6C1EF800B347E4 /* CoinImageViewModel.swift */; };
 		7CB035A02B6C1F6400B347E4 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB0359F2B6C1F6400B347E4 /* CoinImageService.swift */; };
 		7CB035A22B6CD3C300B347E4 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB035A12B6CD3C300B347E4 /* LocalFileManager.swift */; };
+		7CBB37682B7B87A4006A0768 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB37672B7B87A4006A0768 /* ChartView.swift */; };
 		7CBB7E012B6E0F470060B361 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB7E002B6E0F470060B361 /* SearchBarView.swift */; };
 		7CC6EA7A2B6475960015A56B /* CrytoWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6EA792B6475960015A56B /* CrytoWatchApp.swift */; };
 		7CC6EA7C2B6475960015A56B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC6EA7B2B6475960015A56B /* ContentView.swift */; };
@@ -68,6 +69,7 @@
 		7CB0359D2B6C1EF800B347E4 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		7CB0359F2B6C1F6400B347E4 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		7CB035A12B6CD3C300B347E4 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		7CBB37672B7B87A4006A0768 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		7CBB7E002B6E0F470060B361 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		7CC6EA762B6475960015A56B /* CrytoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrytoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC6EA792B6475960015A56B /* CrytoWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrytoWatchApp.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7C1E691D2B77F9020027E6F7 /* DetailsView.swift */,
+				7CBB37672B7B87A4006A0768 /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				7C1E69202B780AF90027E6F7 /* CoinDetailModel.swift in Sources */,
 				7C004E6B2B6EB78B006D3281 /* MarketDataService.swift in Sources */,
 				7C004E672B6EB1DF006D3281 /* HomeStatView.swift in Sources */,
+				7CBB37682B7B87A4006A0768 /* ChartView.swift in Sources */,
 				7CC6EA972B6510880015A56B /* CircleButtonView.swift in Sources */,
 				7C1E69222B780B2B0027E6F7 /* DetailViewModel.swift in Sources */,
 				7C004E652B6EAE47006D3281 /* StatisticView.swift in Sources */,

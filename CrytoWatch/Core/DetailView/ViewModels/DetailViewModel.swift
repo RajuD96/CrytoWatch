@@ -21,6 +21,7 @@ class DetailViewModel: ObservableObject {
     init(coin: CoinModel) {
         self.coin = coin
         self.coinDetailService = CoinDetailService(coinId: coin.id)
+        addSubscribers()
     }
     
     
